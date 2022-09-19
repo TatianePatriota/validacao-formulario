@@ -11,7 +11,7 @@ const criaNovaLinha = (nome, email, id) => {
           <li><button class="botao-simples botao-simples--excluir" type="button">Excluir</button></li>
         </ul>
       </td> 
-      `
+      `;
   linhaNovoCliente.innerHTML = conteudo;
   linhaNovoCliente.dataset.id = id;
   return linhaNovoCliente;
@@ -26,11 +26,11 @@ tabela.addEventListener("click", async (evento) => {
     try{
       const linhaCliente = evento.target.closest("[data-id]");
       let id = linhaCliente.dataset.id;
-      await clienteService.removeCliente(id)
+      await clienteService.removeCliente(id);
       linhaCliente.remove();
     }
     catch(erro){
-      console.log(erro);
+      console.log(erro)
       window.location.href = "../telas/erro.html"
     }
   }
@@ -45,7 +45,7 @@ const render = async () => {
   }
   catch(erro) {
     console.log(erro);
-    window.location.href = "../telas.erro.html"
+    window.location.href = "../telas/erro.html"
   }
 };
 

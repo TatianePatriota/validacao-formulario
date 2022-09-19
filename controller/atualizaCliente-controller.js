@@ -18,15 +18,17 @@ import { clienteService } from '../service/cliente-service.js';
   }
 
   const formulario = document.querySelector('[data-form]')
+  
   formulario.addEventListener('submit', async (evento)=> { 
-    evento.preventDefault();
+    evento.preventDefault()
     try {
       await clienteService.atualizaCliente(id, inputNome.value, inputEmail.value)
       window.location.href = "../telas/edicao_concluida.html"
     }
     catch(erro){
-      console.log(erro);
+      console.log(erro)
       window.location.href="../telas/erro.html"
     }
   })
 })()
+
